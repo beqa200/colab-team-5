@@ -22,8 +22,8 @@ const GenderCategoryHoverModal: React.FC<GenderCategoryHoverModalProps> = ({
     isOpen &&
     title && (
       <div
-        className="absolute animate-fadeIn bottom-[-22rem] left-0 w-full bg-white shadow-md modal-section"
-        onMouseEnter={() => console.log("Modal hover")} // Keep modal open on hover
+        className="absolute  bottom-[-22rem] left-0 w-full bg-white shadow-md modal-section"
+        onMouseEnter={() => console.log("Modal hover")}
         onMouseLeave={onClose}
         style={{ height: "240px", padding: "16px" }}
       >
