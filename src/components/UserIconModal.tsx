@@ -1,6 +1,7 @@
 import { Drawer } from "antd";
 import { useContext } from "react";
 import { MyContext } from "../context/Context";
+import LoginPopup from "./LoginForm";
 
 const SignInModal: React.FC = () => {
   const { userModal, setUserModal } = useContext(MyContext);
@@ -15,13 +16,13 @@ const SignInModal: React.FC = () => {
 
   return (
     <>
-      {/* <Button type="primary" onClick={showDrawer}>
-        Open
-      </Button> */}
-      <Drawer title="Basic Drawer" onClose={onClose} open={userModal}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+      <Drawer
+        className="overflow-x-hidden"
+        title="Login to your account"
+        onClose={onClose}
+        open={userModal}
+      >
+        <LoginPopup />
       </Drawer>
     </>
   );

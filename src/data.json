@@ -1,0 +1,51 @@
+{
+  "products": [
+    {
+      "id": "001",
+      "name": "Cotton Kids T-Shirt",
+      "description": "Soft and comfortable cotton t-shirt for kids.",
+      "price": 12.99,
+      "currency": "USD",
+      "categories": ["T-Shirts"],
+      "gender": "girl",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        {
+          "name": "Blue",
+          "hex": "#0000FF"
+        },
+        {
+          "name": "Red",
+          "hex": "#FF0000"
+        }
+      ],
+      "images": [
+        "/assets/Screenshot 2024-08-06 at 10.27.10 PM.png",
+        "/assets/Screenshot 2024-08-06 at 10.27.10 PM.png"
+      ]
+    },
+    {
+      "id": "002",
+      "name": "Kids Denim Jeans",
+      "description": "Stylish denim jeans for children.",
+      "price": 25.99,
+      "currency": "USD",
+      "categories": ["Jeans"],
+      "gender": "boy",
+      "sizes": ["M", "L", "XL"],
+      "colors": [
+        {
+          "name": "Dark Blue",
+          "hex": "#00008B"
+        },
+        {
+          "name": "Light Blue",
+          "hex": "#ADD8E6"
+        }
+      ],
+
+      "images": ["/assets/Screenshot 2024-08-06 at 10.27.39 PM.png"]
+    }
+  ],
+  "categories": ["Jeans", "T-Shirts", "Sleepers", "All-In-Ones"]
+}

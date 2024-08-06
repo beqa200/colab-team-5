@@ -22,12 +22,12 @@ export default function Header() {
               {/* Nav Links */}
 
               <Bubbles />
-              <p className="flex-1 text-center">BABY</p>
+              <p className="flex-1 text-center hidden md:block">BABY</p>
               <div className="hidden xl:flex  flex-1 justify-end space-x-5">
                 <a className="hover:text-gray-200" href="#">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-[30px] w-[30px]"
+                    className="h-[24px] w-[24px] sm:h-[30px] sm:w-[30px] md:h-[36px] md:w-[36px] xl:h-[30px] xl:w-[30px]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -43,7 +43,7 @@ export default function Header() {
                 <a className="flex items-center hover:text-gray-200" href="#">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-[30px] w-[30px]"
+                    className="h-[24px] w-[24px] sm:h-[30px] sm:w-[30px] md:h-[36px] md:w-[36px] xl:h-[30px] xl:w-[30px]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -57,7 +57,7 @@ export default function Header() {
                   </svg>
                   <span className="flex absolute -mt-5 ml-4">
                     <span className="animate-ping absolute top-[-2px] left-[1rem] inline-flex h-[1rem] w-[1rem] rounded-full bg-pink-400 opacity-75"></span>
-                    <span className="relative  top-[-2px] left-[1rem] flex justify-center items-center  rounded-full  h-[1rem] w-[1rem]  bg-pink-500">
+                    <span className="relative top-[-2px] left-[1rem] flex justify-center items-center rounded-full h-[1rem] w-[1rem] bg-pink-500">
                       1
                     </span>
                   </span>
@@ -72,7 +72,7 @@ export default function Header() {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-[30px] w-[30px]"
+                    className="h-[24px] w-[24px] sm:h-[30px] sm:w-[30px] md:h-[36px] md:w-[36px] xl:h-[30px] xl:w-[30px]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
