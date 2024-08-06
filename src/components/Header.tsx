@@ -1,34 +1,20 @@
 import React from "react";
 import Bubbles from "./Search";
+// import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <>
-      <div>
-        <section className="relative mx-auto">
+      <div className="relative">
+        <section className="mx-auto  ">
           {/* Navbar */}
-          <nav className="flex justify-between bg-[#ebcfeb] text-white w-screen">
-            <div className="px-5 xl:px-12  flex w-full items-center">
-              <a className="text-3xl font-bold font-heading" href="#">
-                Logo Here.
-              </a>
+          <nav className=" navbar-wrapper  flex   justify-between bg-[#ebcfeb] text-white w-screen">
+            <div className="px-5 xl:px-12 justify-between  flex w-full items-center">
               {/* Nav Links */}
-              <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li>
-                  <a className="hover:text-gray-200" href="#">
-                    girl
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-gray-200" href="#">
-                    boy
-                  </a>
-                </li>
-              </ul>
 
               <Bubbles />
-              {/* Header Icons */}
-              <div className="hidden xl:flex items-center space-x-5">
+              <p className="flex-1 text-center">BABY</p>
+              <div className="hidden xl:flex  flex-1 justify-end space-x-5">
                 <a className="hover:text-gray-200" href="#">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

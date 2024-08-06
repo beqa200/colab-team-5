@@ -58,7 +58,7 @@ const BubbleSearch: React.FC = () => {
   ];
 
   return (
-    <div className="relative z-[2] flex items-center justify-center">
+    <div className="relative z-[2] flex-1 flex items-center justify-center">
       <div
         className="relative w-[350px] h-[80px] flex items-center justify-center"
         ref={containerRef}
