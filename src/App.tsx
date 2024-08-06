@@ -3,7 +3,7 @@ import "./index.css";
 import MainPage from "./pages/MainPage";
 import Layout from "./components/Layout";
 import StartPage from "./pages/StartPage";
-import SignIn from "./components/SignIn";
+import SignIn from "./components/UserIconModal";
 
 function App() {
   return (

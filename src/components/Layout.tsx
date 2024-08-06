@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import GenderCategoryHoverModal from "./GenderCategoryHoverModal";
-import SignInModal from "./SignIn";
+import SignInModal from "./UserIconModal";
 
 const Layout: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
