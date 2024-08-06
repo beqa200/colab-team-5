@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+html {
+  font-size: 62.5%;
+}
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* .search-box {
+  font-size: 12px;
+  border: solid 0.3em #d0d5f7;
+  border-radius: 5.5em;
+
+  display: inline-block;
+  position: relative;
+}
+.search-box input[type="text"] {
+  color: rgb(11, 10, 10);
+  font-family: inherit;
+
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.3em 2.1em 0.3em 0.4em;
+  padding-left: 1rem;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 2.5em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+}
+.search-box input[type="text"]:focus {
+  outline: none;
+}
+.search-box input[type="text"]:focus,
+.search-box input[type="text"]:not(:placeholder-shown) {
+  width: 18em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.search-box input[type="text"]:focus + button[type="reset"],
+.search-box input[type="text"]:not(:placeholder-shown) + button[type="reset"] {
+  transform: rotate(-45deg) translateY(0);
+  transition: transform 150ms ease-out 800ms;
+}
+.search-box input[type="text"]:focus + button[type="reset"]:after,
+.search-box
+  input[type="text"]:not(:placeholder-shown)
+  + button[type="reset"]:after {
+  opacity: 1;
+  transition: top 150ms ease-out 950ms, right 150ms ease-out 950ms,
+    opacity 150ms ease 950ms;
+}
+.search-box button[type="reset"] {
+  background-color: transparent;
+  width: 1.4em;
+  height: 1.4em;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.55em;
+  right: 0.55em;
+  transform: rotate(-45deg) translateY(2.2em);
+  transition: transform 150ms ease-out 150ms;
+}
+.search-box button[type="reset"]:before,
+.search-box button[type="reset"]:after {
+  content: "";
+  background-color: #d0d5f7;
+  width: 0.3em;
+  height: 1.4em;
+  position: absolute;
+}
+.search-box button[type="reset"]:after {
+  transform: rotate(90deg);
+  opacity: 0;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+} */
+/* Input field styling */
+/* General styles for the bubbles */
+
+/* General styles for the bubbles */
+/* General styles for the bubbles */
+.bubble {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Uniform size */
+  height: 40px; /* Uniform size */
+  background: #333;
+  border-radius: 50%;
+  transition: opacity 0.5s, width 0.5s, height 0.5s, border-radius 0.5s,
+    visibility 0.5s;
+  z-index: 1;
+  animation: wave 1.5s infinite ease-in-out; /* Faster wave animation */
+}
+
+/* Hide all bubbles */
+.bubble.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0); /* Reduce size to zero */
+}
+
+/* Specific styles for the search icon bubble */
+.bubble.searchIcon {
+  width: 40px; /* Ensure consistency */
+  height: 40px; /* Ensure consistency */
+  border-radius: 50%;
+  background: #333;
+  z-index: 2;
+}
+
+/* Animation styles */
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Move up */
+  }
+  100% {
+    transform: translateY(0); /* Move down */
+  }
+}
+
+/* Apply staggered animation delay to create wave effect */
+.bubble:nth-child(1) {
+  animation-delay: 0s;
+}
+.bubble:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bubble:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.bubble:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.bubble:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.bubble:nth-child(6) {
+  animation-delay: 1s;
+}
+
+/* Input field styling */
+.inputSearch {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  width: 100%; /* Adjust to fill the space of the bubbles */
+  height: 40px; /* Match bubble size */
+  border-radius: 10px;
+  background: #b92121;
+  color: #f9f9f9;
+  position: absolute;
+  left: 0;
+  border: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+  z-index: 2; /* Ensure it overlays correctly */
+  transition: opacity 0.5s, visibility 0.5s; /* Smooth transition */
+  visibility: hidden; /* Hide by default */
+  opacity: 0;
+}
+
+/* Show input field when needed */
+.inputSearch.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Placeholder text styling */
+.inputSearch::placeholder {
+  color: white;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 600px) {
+  .bubble {
+    width: 30px; /* Further reduce size on mobile */
+    height: 30px; /* Further reduce size on mobile */
+  }
+  .inputSearch {
+    height: 30px; /* Adjusted to match bubble size */
+  }
+}
