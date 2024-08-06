@@ -77,7 +77,7 @@ const BubbleSearch: React.FC = () => {
                 bottom: "11px",
                 left: `${index * 50}px`,
                 backgroundColor: color,
-              }} // Adjust position for wave effect
+              }}
               onClick={() => handleBubbleClick(index)}
             >
               <p

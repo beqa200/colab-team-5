@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import GenderCategoryHoverModal from "./GenderCategoryHoverModal";
+import SignInModal from "./SignIn";
 
 const Layout: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -15,11 +16,7 @@ const Layout: React.FC = () => {
 
   const handleMouseLeave = (event: React.MouseEvent) => {
     const relatedTarget = event.relatedTarget as HTMLElement;
-    if (
-      relatedTarget &&
-      // (relatedTarget.closest(".hover-section") ||
-      relatedTarget.closest(".modal-section")
-    ) {
+    if (relatedTarget && relatedTarget.closest(".modal-section")) {
       return;
     }
     setModalOpen(false);
@@ -56,6 +53,7 @@ const Layout: React.FC = () => {
         />
       </section>
       <main className="py-4 px-4">
+        <SignInModal />
         <Outlet />
       </main>
       <Footer />

@@ -194,3 +194,7 @@ html {
     height: 30px; /* Adjusted to match bubble size */
   }
 }
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}

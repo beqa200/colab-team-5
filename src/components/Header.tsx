@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Bubbles from "./Search";
+import { MyContext } from "../context/Context";
 // import { Link } from "react-router-dom";
 
 export default function Header() {
+  const { setUserModal } = useContext(MyContext);
+  const showDrawer = () => {
+    setUserModal(true);
+  };
+
+  // const onClose = () => {
+  //   setUserModal(false);
+  // };
   return (
     <>
       <div className="relative">
@@ -54,7 +63,13 @@ export default function Header() {
                   </span>
                 </a>
 
-                <a className="flex items-center hover:text-gray-200" href="#">
+                <a
+                  onClick={() => {
+                    showDrawer();
+                  }}
+                  className="flex items-center hover:text-gray-200"
+                  href="#"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-[30px] w-[30px]"
