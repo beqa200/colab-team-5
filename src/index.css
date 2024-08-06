@@ -2,93 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 html {
   font-size: 62.5%;
 }
 
 * {
+  font-family: "Fira Code", monospace;
   border: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-/* .search-box {
-  font-size: 12px;
-  border: solid 0.3em #d0d5f7;
-  border-radius: 5.5em;
-
-  display: inline-block;
-  position: relative;
+button {
+  cursor: pointer;
 }
-.search-box input[type="text"] {
-  color: rgb(11, 10, 10);
-  font-family: inherit;
-
-  width: 2.5em;
-  height: 2.5em;
-  padding: 0.3em 2.1em 0.3em 0.4em;
-  padding-left: 1rem;
-  border: none;
-  box-sizing: border-box;
-  border-radius: 2.5em;
-  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+a {
+  cursor: pointer !important;
 }
-.search-box input[type="text"]:focus {
-  outline: none;
-}
-.search-box input[type="text"]:focus,
-.search-box input[type="text"]:not(:placeholder-shown) {
-  width: 18em;
-  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-.search-box input[type="text"]:focus + button[type="reset"],
-.search-box input[type="text"]:not(:placeholder-shown) + button[type="reset"] {
-  transform: rotate(-45deg) translateY(0);
-  transition: transform 150ms ease-out 800ms;
-}
-.search-box input[type="text"]:focus + button[type="reset"]:after,
-.search-box
-  input[type="text"]:not(:placeholder-shown)
-  + button[type="reset"]:after {
-  opacity: 1;
-  transition: top 150ms ease-out 950ms, right 150ms ease-out 950ms,
-    opacity 150ms ease 950ms;
-}
-.search-box button[type="reset"] {
-  background-color: transparent;
-  width: 1.4em;
-  height: 1.4em;
-  border: 0;
-  padding: 0;
-  outline: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0.55em;
-  right: 0.55em;
-  transform: rotate(-45deg) translateY(2.2em);
-  transition: transform 150ms ease-out 150ms;
-}
-.search-box button[type="reset"]:before,
-.search-box button[type="reset"]:after {
-  content: "";
-  background-color: #d0d5f7;
-  width: 0.3em;
-  height: 1.4em;
-  position: absolute;
-}
-.search-box button[type="reset"]:after {
-  transform: rotate(90deg);
-  opacity: 0;
-  transition: transform 150ms ease-out, opacity 150ms ease-out;
-} */
-/* Input field styling */
-/* General styles for the bubbles */
-
-/* General styles for the bubbles */
-/* General styles for the bubbles */
 .bubble {
   position: absolute;
   display: inline-flex;
@@ -157,7 +88,7 @@ html {
 .inputSearch {
   font-family: "Nunito", sans-serif;
   font-weight: 800;
-  width: 100%; /* Adjust to fill the space of the bubbles */
+  /* Adjust to fill the space of the bubbles */
   height: 40px; /* Match bubble size */
   border-radius: 10px;
   background: #b92121;
@@ -171,6 +102,9 @@ html {
   transition: opacity 0.5s, visibility 0.5s; /* Smooth transition */
   visibility: hidden; /* Hide by default */
   opacity: 0;
+  @media screen and (min-width: 600px) {
+    width: 100%;
+  }
 }
 
 /* Show input field when needed */
@@ -190,6 +124,10 @@ html {
     width: 30px; /* Further reduce size on mobile */
     height: 30px; /* Further reduce size on mobile */
   }
+  .bubble.searchIcon {
+    width: 30px; /* Further reduce size on mobile */
+    height: 30px;
+  }
   .inputSearch {
     height: 30px; /* Adjusted to match bubble size */
   }
@@ -197,4 +135,21 @@ html {
 
 .animate-fadeIn {
   animation: fadeIn 1s ease-out;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded;
+  }
+}
+
+.ant-drawer-body {
+  padding: 0 !important;
+}
+.category-item-link {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 14.08px;
+  position: relative;
+  /* display: inline-block; */
 }

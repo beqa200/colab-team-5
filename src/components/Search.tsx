@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const BubbleSearch: React.FC = () => {
   const [showInput, setShowInput] = useState<boolean>(false);
@@ -6,6 +7,8 @@ const BubbleSearch: React.FC = () => {
   const [activeBubbleColor, setActiveBubbleColor] = useState<string>("#b92121");
   const containerRef = useRef<HTMLDivElement>(null);
   const bubblesRef = useRef<HTMLElement[]>([]);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   useEffect(() => {
     const bubbleElements = Array.from(
@@ -58,39 +61,44 @@ const BubbleSearch: React.FC = () => {
   ];
 
   return (
-    <div className="relative z-[2] flex-1 flex items-center justify-center">
+    <div className="relative z-[2] xl:flex-1 flex items-center justify-center">
       <div
-        className="relative w-[350px] h-[80px] flex items-center justify-center"
+        className="relative md:w-[350px] h-[80px] flex items-center justify-center"
         ref={containerRef}
       >
         <div
           id="searchBox"
-          className="absolute top-0 left-0 flex items-center justify-center w-full h-full"
+          className="absolute top-0 left-0 flex items-center justify-center md:w-full h-full"
         >
-          {bubbleColors.map((color, index) => (
-            <div
-              key={index}
-              className={`bubble ${showInput ? "hidden" : ""} ${
-                index === 5 ? "searchIcon" : ""
-              }`}
-              style={{
-                bottom: "11px",
-                left: `${index * 50}px`,
-                backgroundColor: color,
-              }}
-              onClick={() => handleBubbleClick(index)}
-            >
-              <p
-                className={`text-white font-extrabold transition-colors duration-1000 ${
-                  showInput && index === 5 ? "text-[#333]" : "text-[#f9f9f9]"
+          {bubbleColors.map((color, index) => {
+            const leftPosition = isMobile ? index * 40 : index * 50;
+
+            return (
+              <div
+                key={index}
+                className={`bubble ${showInput ? "hidden" : ""} ${
+                  index === 5 ? "searchIcon" : ""
                 }`}
+                style={{
+                  bottom: "11px",
+                  left: `${leftPosition}px`,
+                  backgroundColor: color,
+                  transition: "left 0.3s ease-in-out",
+                }}
+                onClick={() => handleBubbleClick(index)}
               >
-                {showInput && index === 5
-                  ? ""
-                  : ["S", "E", "A", "R", "C", "H"][index]}
-              </p>
-            </div>
-          ))}
+                <p
+                  className={`text-white font-extrabold transition-colors duration-1000 ${
+                    showInput && index === 5 ? "text-[#333]" : "text-[#f9f9f9]"
+                  }`}
+                >
+                  {showInput && index === 5
+                    ? ""
+                    : ["S", "E", "A", "R", "C", "H"][index]}
+                </p>
+              </div>
+            );
+          })}
           <input
             type="text"
             className={`inputSearch ${showInput ? "show" : ""}`}
